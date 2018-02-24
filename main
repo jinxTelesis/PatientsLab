@@ -1,15 +1,30 @@
 #pragma
 #include <iostream>
 #include <string>
+#include "Surgery.h"
+#include "Pharmacy.h"
 
 using namespace std;
 
 int main(int argc, char ** argv)
 {
+	int charge;
+	Surgery surgTestObj;
+	surgTestObj.setAmp(77777);
+	cout << surgTestObj.getAmp() << endl;
+
+	// a r l b s
+	charge = surgTestObj.picCharge('s');
+	cout << charge << endl;
+	//t v e r m
+
+	Pharmacy drugCharge;
+	drugCharge.setEst(666);
+	cout << drugCharge.getEst() << endl;
+	
 
 
 
-
-
+	system("pause");
 	return 0;
 }
