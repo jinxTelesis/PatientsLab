@@ -1,24 +1,4 @@
-#include <iostream>
-#include <string>
-using namespace std;
 
-class Pharmacy
-{
-private:
-	float medCost;
-	string medName;
-
-public:
-	Pharmacy(float, string);
-	float getMedCost();
-	string getMedName();
-};
-
-Pharmacy::Pharmacy(float medc = 0, string medn = " ")
-{
-	medCost = medc;
-	medName = medn;
-};
 
 float Pharmacy::getMedCost()
 {
