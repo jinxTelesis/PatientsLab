@@ -15,6 +15,7 @@ private:
 	string medName;
 
 public:
+	int charge =0;
 	Pharmacy(); // added
 	Pharmacy(int Tyl, int Vit, int Est, int Ran, int Mor);
 	int getTyl();
@@ -27,6 +28,8 @@ public:
 	void setRanit(int ran);
 	int getMorp();
 	void setMorp(int mor);
+
+	int getCharge(); // needs value first
 
 	int picCharge(char c);
 	//Pharmacy(float, string);
