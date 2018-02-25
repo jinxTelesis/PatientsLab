@@ -1,27 +1,42 @@
-#include <iostream>
+#pragma once
 #include <string>
-//#include "Surgery.h"
-//#include "Pharmacy.h"
 using namespace std;
 
-class PatientAccount // :public Surgery/Pharmacy
+class Surgery
 {
-public:
-	PatientAccount();
-	PatientAccount(string name, int idNumber);
-	void setIdNumber(int idNumber);
-	int getIdNumber();
-	void setGetName(string name);
-	string getName();
-	void setDailyRate( int dailyRate);
-	int getDailyRate();
-	void setDaysInHospital(int numberDays);
-	int getDaysInHospital();
-	void setTotalCharges(int charges);
-	int getTotalCharges();
-	void print();
 private:
-	string name;
-	int idNumber, charges, numberDays;
-	double dailyRate;
+	 
+	//string mSurgeryType;
+	//string mAmputation; // 1st surgery
+	//string mRecapitation; // 2nd surgery
+	//string mSexualReassignement; // 3rd surgery
+	//string mBiopsy; // 4th surgery
+	//string mLivertr; // 5th surgery
+	int mAmpCost;
+	int mRecapCost;
+	int mSrsCost;
+	int mBiopCost;
+	int mLiverTrCost;
+public:
+	int charge = 0;
+
+	Surgery(); // added
+	Surgery(int Amp, int Recap, int Srs, int Bio, int LiverTr);
+	int getAmp();
+	void setAmp(int amp);
+	int getRecap();
+	void setRecap(int recap);
+	int getSrs();
+	void setSrs(int recap);
+	int getBiospy();
+	void setBiospy(int bio);
+	int getLiverTr();
+	void setLiverTr(int liv);
+	int getCharge();
+
+	int picCharge(char c);
+	//float getcost(); 
+	//string getsurgerytype(); 
+	//void getSurgerydisplay(float& totalcost1); 
 };
+
