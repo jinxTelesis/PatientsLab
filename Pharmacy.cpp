@@ -90,30 +90,48 @@ void Pharmacy::setMorp(int mor)
 int Pharmacy::picCharge(char c)// t v e r m
 {
 	char cTemp;
-	int charge;
+	//int charge;
 	cTemp = tolower(c);
+	int tempcharge = charge;
 
 	switch (cTemp)
 	{
 	case 't': charge = mTylenol;
+		cout << "You are being charged for Tylenol " << endl;
+		charge += tempcharge;
 		return charge;
 
 	case 'v': charge = mVitaminR;
+		cout << "you're being charged for Vitamin R " << endl;
+		charge += tempcharge;
 		return charge;
 
 	case 'e': charge = mEstrogen;
+		cout << "you're being charged for Estrogen " << endl;
+		charge += tempcharge;
 		return charge;
 
 	case 'r': charge = mRanitidine;
+		cout << "you're being charged for Ranitidine " << endl;
+		charge += tempcharge;
 		return charge;
 
 	case 'm': charge = mMorphine;
+		cout << "you're being charged for Morphine " << endl;
+		charge += tempcharge;
 		return charge;
+
 	default:
 		charge = 1;
 		cout << "invalid selection restart program";
+		return charge;
 	}
 
+}
+
+int Pharmacy::getCharge()
+{
+	return charge;
 }
 
 float Pharmacy::getMedCost()
@@ -131,3 +149,4 @@ string Pharmacy::getMedName()
 
 	return medName;
 }
+
