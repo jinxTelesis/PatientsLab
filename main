@@ -1,9 +1,9 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include "Surgery.h"
-#include "Pharmacy.h"
-#include "PatientAccout.h"
+//#include <iostream>
+//#include <string>
+//#include "Surgery.h"
+//#include "Pharmacy.h"
+#include "PatientAccount.h" // gets headers from Patient
 #include <iomanip>
 #include <limits>
 #include <ios>
@@ -12,7 +12,7 @@ using namespace std;
 void disSurgMenu();
 void disPharMenu();
 void disMedPic();
-void balls();
+void wtf();
 char getCharacter(char cha);
 
 // cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
@@ -28,8 +28,7 @@ int main(int argc, char ** argv)
 	string tempstr;
 	char tempchr;
 	/////// test stuff
-	//cout << "hi" << endl;
-	void balls();
+	
 
 	do
 	{
@@ -144,9 +143,9 @@ int main(int argc, char ** argv)
 	return 0;
 }
 
-void balls()
+void wtf()
 {
-	cout << "this is fucked" << endl;
+	cout << "this is messed up" << endl;
 }
 
 
