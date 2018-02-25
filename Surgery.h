@@ -5,7 +5,7 @@ using namespace std;
 class Surgery
 {
 private:
-	int mCharge =0; 
+	 
 	//string mSurgeryType;
 	//string mAmputation; // 1st surgery
 	//string mRecapitation; // 2nd surgery
@@ -18,6 +18,8 @@ private:
 	int mBiopCost;
 	int mLiverTrCost;
 public:
+	int charge = 0;
+
 	Surgery(); // added
 	Surgery(int Amp, int Recap, int Srs, int Bio, int LiverTr);
 	int getAmp();
@@ -30,9 +32,11 @@ public:
 	void setBiospy(int bio);
 	int getLiverTr();
 	void setLiverTr(int liv);
+	int getCharge();
 
-	int picCharge(char charge);
+	int picCharge(char c);
 	//float getcost(); 
 	//string getsurgerytype(); 
 	//void getSurgerydisplay(float& totalcost1); 
 };
+
