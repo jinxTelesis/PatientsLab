@@ -1,4 +1,5 @@
-#include "Surgery.h" //
+#pragma once
+#include "Surgery.h"
 #include <iostream>
 #include <ctype.h>
 
@@ -100,32 +101,54 @@ void Surgery::setLiverTr(int liv)
 int Surgery::picCharge(char c) // a r l b s
 {
 	char cTemp;
-	int charge;
 	cTemp = tolower(c);
+	int tempcharge = charge;
 
 	switch (cTemp)
 	{
 	case 'a': charge = mAmpCost;
+		cout << "you're being charged for an Amputation" << endl;
+		charge += tempcharge;
 		return charge;
+
 
 	case 'r': charge = mRecapCost;
+		cout << "you're being charged for a Recapitation" << endl;
+		charge += tempcharge;
 		return charge;
+
 
 	case 'l': charge = mLiverTrCost;
+		cout << "you're being charged for a liver transplant " << endl;
+		charge += tempcharge;
 		return charge;
+
 
 	case 'b': charge = mBiopCost;
+		cout << "you're being charged for a biopsy" << endl;
+		charge += tempcharge;
 		return charge;
 
+
 	case 's': charge = mSrsCost;
+		cout << "You're being charged for sexual reassignment surgery " << endl;
+		charge += tempcharge;
 		return charge;
+		
+
 	default :
 		charge = 1;
 		cout << "invalid selection restart program";
+		return charge;
 	}
 
 }
 
+
+int Surgery::getCharge()
+{
+	return charge;
+}
 /*
 float Surgery::getcost()
 {
