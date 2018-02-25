@@ -1,30 +1,212 @@
-#pragma
+#pragma once
 #include <iostream>
 #include <string>
 #include "Surgery.h"
 #include "Pharmacy.h"
+#include "PatientAccout.h"
+#include <iomanip>
+#include <limits>
+#include <ios>
 
 using namespace std;
+void disSurgMenu();
+void disPharMenu();
+void disMedPic();
+void balls();
+char getCharacter(char cha);
+
+// cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
 
 int main(int argc, char ** argv)
 {
-	int charge;
-	Surgery surgTestObj;
-	surgTestObj.setAmp(77777);
-	cout << surgTestObj.getAmp() << endl;
+	int charge = 0;
+	char userSelection;
+	const char MAX_MENU1N2 = '6';
+	const char MAX_MENU3 = '9';
+	PatientAccount patientA;
+	int temp;
+	string tempstr;
+	char tempchr;
+	/////// test stuff
+	//cout << "hi" << endl;
+	void balls();
 
-	// a r l b s
-	charge = surgTestObj.picCharge('s');
-	cout << charge << endl;
-	//t v e r m
+	do
+	{
+		disSurgMenu();
+		userSelection = getCharacter(MAX_MENU1N2);
+		switch (userSelection)
+		{
+		case '0': cout << "you picked to move to the next menu hit enter";
+			//userSelection = '0';
+			break;
 
-	Pharmacy drugCharge;
-	drugCharge.setEst(666);
-	cout << drugCharge.getEst() << endl;
-	
+		case '1': cout << "setting Amputations price to ";
+			cin >> temp;
+			patientA.surg.setAmp(temp);
+			cout << "Amputation price is $" << patientA.surg.getAmp();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+
+		case '2': cout << "setting Recapitation prices" << endl;
+			cin >> temp;
+			patientA.surg.setRecap(temp);
+			cout << "Recapitation price is $" << patientA.surg.getRecap();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+
+		case '3': cout << "setting Sexual Reassignement price" << endl;
+			cin >> temp;
+			patientA.surg.setSrs(temp);
+			cout << "Sexual Reassignement price is $" << patientA.surg.getSrs();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+
+		case '4': cout << "setting Biospy price" << endl;
+			cin >> temp;
+			patientA.surg.setBiospy(temp);
+			cout << "Biospy price is $" << patientA.surg.getBiospy();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+
+		case '5': cout << "setting Liver Transplant price" << endl;
+			cin >> temp;
+			patientA.surg.setLiverTr(temp);
+			cout << "Liver Transplant price is $" << patientA.surg.getLiverTr() << endl;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+
+		case '6': cout << "exiting program " << endl;
+			return 0;
+			break;
+
+		}
+
+	} while (userSelection != '0');
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	// menu 2
+	do
+	{
+		disPharMenu();
+		userSelection = getCharacter(MAX_MENU1N2);
+		switch (userSelection)
+		{
+		case '0': cout << " you picked use current medication values or move to next menu";
+			//userSelection = '0';
+			break;
+
+		case '1': cout << "setting Tylenol price to ";
+			cin >> temp;
+			patientA.phar.setTyl(temp);
+			cout << "Tylenol price is $" << patientA.phar.getTyl();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+
+		case '2': cout << "setting Vitamin R prices to " << endl;
+			cin >> temp;
+			patientA.phar.setVit(temp);
+			cout << "Vitamin R price is $" << patientA.phar.getVit();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+
+		case '3': cout << "setting Estrogen price" << endl;
+			cin >> temp;
+			patientA.phar.setEst(temp);
+			cout << "Estrogen price is $" << patientA.phar.getEst();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+
+		case '4': cout << "setting ranitidine price" << endl;//ty vit est ranitidine mor
+			cin >> temp;
+			patientA.phar.setEst(temp);
+			cout << "ranitidine price is $" << patientA.phar.getEst();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+
+		case '5': cout << "setting morphine price" << endl;
+			cin >> temp;
+			patientA.phar.setMorp(temp);
+			cout << "morphine price is $" << patientA.phar.getMorp() << endl;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+
+		case '6': cout << "exiting program " << endl;
+			return 0;
+			break;
+
+		}
+
+	} while (userSelection != '0');
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	cout << " got here " << endl;
 
 
-
-	system("pause");
 	return 0;
+}
+
+void balls()
+{
+	cout << "this is fucked" << endl;
+}
+
+
+void disSurgMenu()
+{
+	cout << "\n\n\n       " << "********************" << "\n\n\n\n" << endl;
+	cout << "press 0  " << "To use default surgery prices or move to next menu" << endl;
+	cout << "press 1  " << "To change the price of Amputations " << endl;
+	cout << "press 2  " << "To change the price of Recapitations " << endl;
+	cout << "press 3  " << "To change the price of Sexual Reassignements " << endl;
+	cout << "press 4  " << "To change the price of a Biospy " << endl;
+	cout << "press 5  " << "To change the price of Liver Transplants " << endl;
+	cout << "press 6  " << "to exit the program " << endl;
+	//cout << "press 1  " << "To change the price of Tylenol " << endl; //Tylenol Vitamin R Estrogen Ranitidine Morphine
+	//cout << "press 2  " << "To change the price of Vitamin R" << endl;
+	//cout << "press 3  " << "To change the price of Estrogen " << endl;
+	//cout << "press 4  " << "To change the price of Ranitidine " << endl;
+	//cout << "press 5 " << "To change the price of Morphine " << endl;
+	//cout << "press 11 " << "To exit the program " << endl;
+	cout << "\n\n\n       " << "********************" << "\n\n\n\n" << endl;
+}
+
+void disPharMenu()
+{
+	cout << "\n\n\n       " << "********************" << "\n\n\n\n" << endl;
+	cout << "press 0  " << "To use default medication prices or move to next menu" << endl;
+	cout << "press 1  " << "To change the price of Tylenol " << endl; //ty vit est ranitidine mor
+	cout << "press 2  " << "To change the price of Vitamin R" << endl;
+	cout << "press 3  " << "To change the price of Estrogen " << endl;
+	cout << "press 4  " << "To change the price of Ranitidine " << endl;
+	cout << "press 5 " << "To change the price of Morphine " << endl;
+	cout << "press 6 " << "To exit the program " << endl;
+	cout << "\n\n\n       " << "********************" << "\n\n\n\n" << endl;
+}
+
+void disMedPic() //// t v e r m
+{
+	cout << "To charge for Tylenol enter the character t" << endl;
+	cout << "To charge for Vitamin R enter the character v" << endl;
+	cout << "To charge for Estrogen enter the character e" << endl;
+	cout << "To charge for Ranitidine enter the character r" << endl;
+	cout << "to charge for Morphine enter the character m" << endl;
+}
+
+
+
+char getCharacter(char max)
+{
+	char choice = cin.get();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	//cin.sync();
+
+	while (choice < '0' || choice > max)
+	{
+		cout << "Invalid choice" << endl;
+		cout << "Enter another value please" << endl;
+		choice = cin.get();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		//cin.sync();
+	}
+
+	return choice;
 }
